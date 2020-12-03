@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.TeamMapper">
+    
+    <resultMap type="Team" id="TeamResult">
+        <result property="id"    column="id"    />
+        <result property="logo"    column="logo"    />
+        <result property="name"    column="name"    />
+        <result property="win"    column="win"    />
+        <result property="lose"    column="lose"    />
+        <result property="flat"    column="flat"    />
+        <result property="score"    column="score"    />
+        <result property="session"    column="session"    />
+        <result property="goal"    column="goal"    />
+        <result property="conceded"    column="conceded"    />
+    </resultMap>
+
+    <sql id="selectTeamVo">
+        select id, logo, name, win, lose, flat, score, session, goal, conceded from team
+    </sql>
+
+    <select id="selectTeamList" parameterType="Team" resultMap="TeamResult">
+        <include refid="selectTeamVo"/>
+        <where>  
+            <if test="logo != null  and logo != ''"> and logo = #{logo}</if>
+            <if test="name != null  and name != ''"> and name like concat('%', #{name}, '%')</if>
+            <if test="win != null "> and win = #{win}</if>
+            <if test="lose != null "> and lose = #{lose}</if>
+            <if test="flat != null "> and flat = #{flat}</if>
+            <if test="score != null "> and score = #{score}</if>
+            <if test="session != null "> and session = #{session}</if>
+            <if test="goal != null "> and goal = #{goal}</if>
+            <if test="conceded != null "> and conceded = #{conceded}</if>
+        </where>
+    </select>
+    
+    <select id="selectTeamById" parameterType="Long" resultMap="TeamResult">
+        <include refid="selectTeamVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertTeam" parameterType="Team">
+        insert into team
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="logo != null">logo,</if>
+            <if test="name != null">name,</if>
+            <if test="win != null">win,</if>
+            <if test="lose != null">lose,</if>
+            <if test="flat != null">flat,</if>
+            <if test="score != null">score,</if>
+            <if test="session != null">session,</if>
+            <if test="goal != null">goal,</if>
+            <if test="conceded != null">conceded,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="logo != null">#{logo},</if>
+            <if test="name != null">#{name},</if>
+            <if test="win != null">#{win},</if>
+            <if test="lose != null">#{lose},</if>
+            <if test="flat != null">#{flat},</if>
+            <if test="score != null">#{score},</if>
+            <if test="session != null">#{session},</if>
+            <if test="goal != null">#{goal},</if>
+            <if test="conceded != null">#{conceded},</if>
+         </trim>
+    </insert>
+
+    <update id="updateTeam" parameterType="Team">
+        update team
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="logo != null">logo = #{logo},</if>
+            <if test="name != null">name = #{name},</if>
+            <if test="win != null">win = #{win},</if>
+            <if test="lose != null">lose = #{lose},</if>
+            <if test="flat != null">flat = #{flat},</if>
+            <if test="score != null">score = #{score},</if>
+            <if test="session != null">session = #{session},</if>
+            <if test="goal != null">goal = #{goal},</if>
+            <if test="conceded != null">conceded = #{conceded},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteTeamById" parameterType="Long">
+        delete from team where id = #{id}
+    </delete>
+
+    <delete id="deleteTeamByIds" parameterType="String">
+        delete from team where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>

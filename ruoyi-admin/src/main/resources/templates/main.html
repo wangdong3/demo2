@@ -10,6 +10,14 @@
     <link href="../static/css/font-awesome.min.css" th:href="@{/css/font-awesome.min.css}" rel="stylesheet"/>
     <link href="../static/css/main/animate.min.css" th:href="@{/css/main/animate.min.css}" rel="stylesheet"/>
     <link href="../static/css/main/style.min862f.css" th:href="@{/css/main/style.min862f.css}" rel="stylesheet"/>
+    <style>
+        .logoWidth{
+            width: 30%;
+        }
+        .logoHeight{
+            height: 70%;
+        }
+    </style>
 </head>
 
 <body class="gray-bg">
@@ -24,8 +32,8 @@
                 <h4 class="text-danger">云产品通用红包，可叠加官网常规优惠使用。(仅限新用户)</h4>
             </blockquote>-->
 			<div class="layui-carousel" id="test1" lay-filter="test1">
-				<div carousel-item="">
-					<div><img th:src="@{/img/qr_code.png}"></div>
+				<div carousel-item="" style="vertical-align: middle;text-align: center;">
+					<img th:src="@{/img/banner.jpg}">
 				</div>
 			</div>
 
@@ -39,25 +47,40 @@
             <img th:src="@{/img/qr_code.png}" width="100%" style="max-width:264px;">
             <br>
         </div>-->
+        <div class="col-sm-12" style="height: 100px;vertical-align: middle;text-align: center;">
+            <img class="logoHeight" th:src="@{/img/team/FgVAEKNTP255RO3YPQuCKR5ceuTd}" alt="" style="cursor:pointer;">
+            <img class="logoHeight" th:src="@{/img/team/FhbRzK1_fX0fWJr9TmxsDbwLjSDj}" alt="" style="cursor:pointer;">
+            <img class="logoHeight" th:src="@{/img/team/FhbXg7FZf3UtjiHgeKGFpyaU86vP}" alt="" style="cursor:pointer;">
+            <img class="logoHeight" th:src="@{/img/team/FhnVQd9tUYHhw9Ku-j1n00UdAq8Z}" alt="" style="cursor:pointer;">
+            <img class="logoHeight" th:src="@{/img/team/FiHTwQi7DEP84Imh2x3Agznej55f}" alt="" style="cursor:pointer;">
+            <img class="logoHeight" th:src="@{/img/team/FijuS5LjoA_WjcdWtv3qodW2I3aX}" alt="" style="cursor:pointer;">
+            <img class="logoHeight" th:src="@{/img/team/FiTVAwpnl506Lj28aEZdXN6O_NTY}" alt="" style="cursor:pointer;">
+            <img class="logoHeight" th:src="@{/img/team/FmvJJIM4MaN3SqUByPSx_uY9F-yb}" alt="" style="cursor:pointer;">
+            <img class="logoHeight" th:src="@{/img/team/FnRHBdkNhQK3mA7LS38v2KNCOCPD}" alt="" style="cursor:pointer;">
+            <img class="logoHeight" th:src="@{/img/team/FoBIzWyGBez6hMwpJ4kDW87dgI75}" alt="" style="cursor:pointer;">
+            <img class="logoHeight" th:src="@{/img/team/FoKNRHw6ZAz7PwZHY0Vr0ONsdeaw}" alt="" style="cursor:pointer;">
+            <img class="logoHeight" th:src="@{/img/team/FoSZaaHVVdsq72dMvUm73JM-LucZ}" alt="" style="cursor:pointer;">
+            <img class="logoHeight" th:src="@{/img/team/FqtHmS_1OZRajvJ9Km4U1U5f3VAO}" alt="" style="cursor:pointer;">
+            <img class="logoHeight" th:src="@{/img/team/Frz1t0c2uTVFoAkuFuZ0Vd0m5uIi}" alt="" style="cursor:pointer;">
+            <img class="logoHeight" th:src="@{/img/team/Fs0VE3zzoh316SLPKaQ3jXDSa-Jo}" alt="" style="cursor:pointer;">
+            <img class="logoHeight" th:src="@{/img/team/FtS-frsJHyHO4gbzoaeGpESetGK_}" alt="" style="cursor:pointer;">
+            <img class="logoHeight" th:src="@{/img/team/Fun6NJ2j9vFHViXGT9M5UvY-V7QL}" alt="" style="cursor:pointer;">
+            <img class="logoHeight" th:src="@{/img/team/Fv6HRz-L8N9SnYbtDmLtF00j6fY4}" alt="" style="cursor:pointer;">
+            <img class="logoHeight" th:src="@{/img/team/Fvb9LOb7OzM650iMqmJRp1PsF512}" alt="" style="cursor:pointer;">
+        </div>
         <div class="col-sm-6">
             <h2>赛程</h2>
             <p>2020-12-02</p>
 
-            <p>1.中国队 vs 韩国队</p>
-            <p>2.巴西队 vs 德国队</p>
+            <p>1.中国队 vs 韩国队  <span>2020-12-04 18:00</span></p>
+            <p>2.巴西队 vs 德国队  <span>2020-12-04 18:00</span></p>
 
         </div>
         <div class="col-sm-6">
-            <h4>球队排行榜：</h4>
-            <ol>
-                <li>巴西队</li>
-                <li>德国队</li>
-                <li>日本</li>
-                <li>美国</li>
-                <li>韩国</li>
+            <h4>新闻</h4>
+            <p>
 
-                <li>更多……</li>
-            </ol>
+            </p>
         </div>
 
     </div>
@@ -90,69 +113,55 @@
                     </div>
                     <div class="ibox-content no-padding">
                         <div class="panel-body">
-                            <div class="panel-group" id="version">
-                            <div class="panel panel-default">
-								<div class="panel-heading">
-								   <h5 class="panel-title">
-									   <a data-toggle="collapse" data-parent="#version" href="#v451">日本</a>
-								   </h5>
-								</div>
-								<div id="v451" class="panel-collapse collapse in">
-									<div class="panel-body">
-									   <ol>
-									        <li>dfdf</li>
-									        <li>dfdf</li>
-									        <li>dfdf</li>
-									        <li>dfdf</li>
-									        <li>dfdf</li>
-									        <li>dfdf</li>
-									        <li>dfdf</li>
-										</ol>
-									</div>
-								</div>
-							</div>
-                            <div class="panel panel-default">
-								<div class="panel-heading">
-								   <h5 class="panel-title">
-									   <a data-toggle="collapse" data-parent="#version" href="#v45">德国队</a>
-								   </h5>
-								</div>
-								<div id="v45" class="panel-collapse collapse">
-									<div class="panel-body">
-									   <ol>
-									        <li>ggg</li>
-									        <li>ww</li>
-									        <li>dd</li>
-									        <li>ddd</li>
-									        <li>sss</li>
-										</ol>
-									</div>
-								</div>
-							</div>
-                            <div class="panel panel-default">
-								<div class="panel-heading">
-								   <h5 class="panel-title">
-									   <a data-toggle="collapse" data-parent="#version" href="#v44">巴西队</a>
-								   </h5>
-								</div>
-								<div id="v44" class="panel-collapse collapse">
-									<div class="panel-body">
-									   <ol>
-									        <li>小a</li>
-									        <li>小a</li>
-									        <li>小a</li>
-									        <li>小a</li>
-									        <li>小a</li>
-									        <li>小a</li>
-									        <li>小a</li>
-									        <li>小a</li>
-									        <li>小a</li>
-										</ol>
-									</div>
-								</div>
-							</div>
+                            <table class="layui-table" lay-even="" lay-skin="nob">
+                                <colgroup>
+                                    <col width="150">
+                                    <col width="150">
+                                    <col width="200">
+                                    <col>
+                                </colgroup>
+                                <thead>
+                                <tr>
+                                    <th>排名</th>
+                                    <th>球队</th>
+                                    <th>积分</th>
+                                    <th>场次</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td><img class="logoWidth" th:src="@{/img/team/FgVAEKNTP255RO3YPQuCKR5ceuTd}"></td>
+                                    <td>33</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td><img class="logoWidth" th:src="@{/img/team/FhbRzK1_fX0fWJr9TmxsDbwLjSDj}"></td>
+                                    <td>32</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td><img class="logoWidth" th:src="@{/img/team/FhbXg7FZf3UtjiHgeKGFpyaU86vP}"></td>
+                                    <td>22</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td><img class="logoWidth" th:src="@{/img/team/FhnVQd9tUYHhw9Ku-j1n00UdAq8Z}"></td>
+                                    <td>21</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td><img class="logoWidth" th:src="@{/img/team/FiHTwQi7DEP84Imh2x3Agznej55f}"></td>
+                                    <td>20</td>
+                                    <td>1</td>
+                                </tr>
+                                </tbody>
+                            </table>
 
-                            </div>
                         </div>
                     </div>
                 </div>
