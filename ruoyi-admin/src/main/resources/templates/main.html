@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html  lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--360浏览器优先以webkit内核解析-->
+    <title>若依介绍</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link href="../static/css/font-awesome.min.css" th:href="@{/css/font-awesome.min.css}" rel="stylesheet"/>
+    <link href="../static/css/main/animate.min.css" th:href="@{/css/main/animate.min.css}" rel="stylesheet"/>
+    <link href="../static/css/main/style.min862f.css" th:href="@{/css/main/style.min862f.css}" rel="stylesheet"/>
+</head>
+
+<body class="gray-bg">
+    <div class="row  border-bottom white-bg dashboard-header">
+        <div class="col-sm-12">
+            <!--<blockquote class="text-warning" style="font-size:14px">
+                                           领取阿里云通用云产品1888优惠券
+                <br><a target="_blank" href="https://www.aliyun.com/minisite/goods?userCode=brki8iof">https://www.aliyun.com/minisite/goods?userCode=brki8iof</a><br>
+                                           领取腾讯云通用云产品2860优惠券
+                <br><a target="_blank" href="https://cloud.tencent.com/redirect.php?redirect=1025&cps_key=198c8df2ed259157187173bc7f4f32fd&from=console">https://cloud.tencent.com/redirect.php?redirect=1025&cps_key=198c8df2ed259157187173bc7f4f32fd&from=console</a><br>
+                                           阿里云服务器折扣区 <a target="_blank" href="http://aly.ruoyi.vip">☛☛点我进入☚☚</a> &nbsp;&nbsp;&nbsp; 腾讯云服务器秒杀区 <a target="_blank" href="http://txy.ruoyi.vip">☛☛点我进入☚☚</a><br>
+                <h4 class="text-danger">云产品通用红包，可叠加官网常规优惠使用。(仅限新用户)</h4>
+            </blockquote>-->
+			<div class="layui-carousel" id="test1" lay-filter="test1">
+				<div carousel-item="">
+					<div><img th:src="@{/img/qr_code.png}"></div>
+				</div>
+			</div>
+
+			<hr>
+        </div>
+        <!--<div class="col-sm-3">
+            <h2>Hello,Guest</h2>
+            <small>移动设备访问请扫描以下二维码：</small>
+            <br>
+            <br>
+            <img th:src="@{/img/qr_code.png}" width="100%" style="max-width:264px;">
+            <br>
+        </div>-->
+        <div class="col-sm-6">
+            <h2>赛程</h2>
+            <p>2020-12-02</p>
+
+            <p>1.中国队 vs 韩国队</p>
+            <p>2.巴西队 vs 德国队</p>
+
+        </div>
+        <div class="col-sm-6">
+            <h4>球队排行榜：</h4>
+            <ol>
+                <li>巴西队</li>
+                <li>德国队</li>
+                <li>日本</li>
+                <li>美国</li>
+                <li>韩国</li>
+
+                <li>更多……</li>
+            </ol>
+        </div>
+
+    </div>
+    <div class="wrapper wrapper-content">
+        <div class="row">
+            <div class="col-sm-4">
+
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>球员排行榜</h5>
+
+                    </div>
+                    <div class="ibox-content">
+						<ol>
+							<li>dfdfdf</li>
+							<li>gfgf</li>
+							<li>fr</li>
+							<li>tghtht</li>
+							<li>ff</li>
+
+							<li>更多……</li>
+						</ol>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>球队排行榜</h5>
+                    </div>
+                    <div class="ibox-content no-padding">
+                        <div class="panel-body">
+                            <div class="panel-group" id="version">
+                            <div class="panel panel-default">
+								<div class="panel-heading">
+								   <h5 class="panel-title">
+									   <a data-toggle="collapse" data-parent="#version" href="#v451">日本</a>
+								   </h5>
+								</div>
+								<div id="v451" class="panel-collapse collapse in">
+									<div class="panel-body">
+									   <ol>
+									        <li>dfdf</li>
+									        <li>dfdf</li>
+									        <li>dfdf</li>
+									        <li>dfdf</li>
+									        <li>dfdf</li>
+									        <li>dfdf</li>
+									        <li>dfdf</li>
+										</ol>
+									</div>
+								</div>
+							</div>
+                            <div class="panel panel-default">
+								<div class="panel-heading">
+								   <h5 class="panel-title">
+									   <a data-toggle="collapse" data-parent="#version" href="#v45">德国队</a>
+								   </h5>
+								</div>
+								<div id="v45" class="panel-collapse collapse">
+									<div class="panel-body">
+									   <ol>
+									        <li>ggg</li>
+									        <li>ww</li>
+									        <li>dd</li>
+									        <li>ddd</li>
+									        <li>sss</li>
+										</ol>
+									</div>
+								</div>
+							</div>
+                            <div class="panel panel-default">
+								<div class="panel-heading">
+								   <h5 class="panel-title">
+									   <a data-toggle="collapse" data-parent="#version" href="#v44">巴西队</a>
+								   </h5>
+								</div>
+								<div id="v44" class="panel-collapse collapse">
+									<div class="panel-body">
+									   <ol>
+									        <li>小a</li>
+									        <li>小a</li>
+									        <li>小a</li>
+									        <li>小a</li>
+									        <li>小a</li>
+									        <li>小a</li>
+									        <li>小a</li>
+									        <li>小a</li>
+									        <li>小a</li>
+										</ol>
+									</div>
+								</div>
+							</div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>捐赠</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <!--<div class="alert alert-warning">
+                            	请作者喝杯咖啡（点击图片放大）
+                        </div>
+                        <p id="pay-qrcode">
+                            <a href="javascript:;"><img th:src="@{/img/pay.png}" width="100%" alt="请使用手机支付宝或者微信扫码支付">
+                            </a>
+                        </p>-->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script th:src="@{/js/jquery.min.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+    <script th:src="@{/ajax/libs/layer/layer.min.js}"></script>
+    <script type="text/javascript">
+	    $('#pay-qrcode').click(function(){
+	        var html=$(this).html();
+	        parent.layer.open({
+	            title: false,
+	            type: 1,
+	            closeBtn:false,
+	            shadeClose:true,
+	            area: ['600px', '360px'],
+	            content: html
+	        });
+	    });
+    </script>
+</body>
+</html>
