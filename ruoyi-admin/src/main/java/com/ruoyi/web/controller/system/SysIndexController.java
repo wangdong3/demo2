@@ -4,6 +4,9 @@ import java.util.Date;
 import java.util.List;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
+
+import com.ruoyi.system.domain.SysNews;
+import com.ruoyi.system.service.ISysNewsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -35,6 +38,9 @@ public class SysIndexController extends BaseController
 
     @Autowired
     private ISysConfigService configService;
+
+    @Autowired
+    private ISysNewsService sysNewsService;
 
     // 系统首页
     @GetMapping("/index")
@@ -92,6 +98,7 @@ public class SysIndexController extends BaseController
     public String main(ModelMap mmap)
     {
         mmap.put("version", RuoYiConfig.getVersion());
+        mmap.put("newsList", sysNewsService.selectSysNewsList(new SysNews()));
         return "main";
     }
 

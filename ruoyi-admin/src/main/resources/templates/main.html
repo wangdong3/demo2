@@ -79,37 +79,18 @@
                 <legend>赛事新闻</legend>
             </fieldset>
             <div style="padding: 20px; background-color: #F2F2F2;">
-                <div class="layui-row layui-col-space15">
+                <div class="layui-row layui-col-space15" th:each="news:${newsList}">
                     <div class="layui-col-md12">
                         <div class="layui-card">
                             <div class="layui-card-header">
-                                <a>用足球与媒体的力量唤燃亿心 2020中国平安中超联赛媒体传播大盘点</a>
-                                <span class="fr">2020-11-16 05:10:00</span></div>
-                            <div class="layui-card-body">
+                                <a th:text="${news.newsTitle}">用足球与媒体的力量唤燃亿心 2020中国平安中超联赛媒体传播大盘点</a>
+                                <span class="fr" th:text="${#dates.format(news.createTime, 'yyyy-MM-dd hh:mm')}">2020-11-16 05:10:00</span></div>
+                            <div class="layui-card-body" th:text="${news.newsContent}">
                                 内容...
                             </div>
                         </div>
                     </div>
-                    <div class="layui-col-md12">
-                        <div class="layui-card">
-                            <div class="layui-card-header">
-                                <a>2020赛季中国足球协会超甲升降级附加赛赛程发布</a>
-                                <span class="fr">2020-11-16 05:10:00</span></div>
-                            <div class="layui-card-body">
-                                11月18日19:35，浙江能源绿城VS武汉卓尔的比赛将在苏州奥林匹克体育中心进行。
-                            </div>
-                        </div>
-                    </div>
-                    <div class="layui-col-md12">
-                        <div class="layui-card">
-                            <div class="layui-card-header">
-                                <a>赛后声音 | 超甲升降级附加赛次回合武汉卓尔VS浙江能源绿城赛后新闻发布会综述</a>
-                                <span class="fr">2020-11-22 22:17:51</span></div>
-                            <div class="layui-card-body">
-                                11月22日19:35，2020赛季中国足球协会超甲升降级附加赛次回合，武汉卓尔1-0小胜浙江能源绿城。赛后，绿城主教练郑雄、卓尔领队庞利出席了赛后新闻发布会。
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -253,6 +234,18 @@
 	            content: html
 	        });
 	    });
+
+        /*var newsList = [];
+        var newsUrl = "/ry/system/news/list";
+        $.ajax({
+            type: "post",
+            url: newsUrl,
+            dataType: "json",
+            contentType: "application/json",
+            success: function (data) {
+                newsList = data.rows;
+            }
+        });*/
     </script>
 </body>
 </html>
