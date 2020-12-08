@@ -20,7 +20,7 @@ import com.ruoyi.common.utils.poi.ExcelUtil;
 import com.ruoyi.common.core.page.TableDataInfo;
 
 /**
- * 【请填写功能名称】Controller
+ * 球队Controller
  * 
  * @author ruoyi
  * @date 2020-12-03
@@ -42,7 +42,7 @@ public class TeamController extends BaseController
     }
 
     /**
-     * 查询【请填写功能名称】列表
+     * 查询球队列表
      */
     @RequiresPermissions("system:team:list")
     @PostMapping("/list")
@@ -55,10 +55,10 @@ public class TeamController extends BaseController
     }
 
     /**
-     * 导出【请填写功能名称】列表
+     * 导出球队列表
      */
     @RequiresPermissions("system:team:export")
-    @Log(title = "【请填写功能名称】", businessType = BusinessType.EXPORT)
+    @Log(title = "球队", businessType = BusinessType.EXPORT)
     @PostMapping("/export")
     @ResponseBody
     public AjaxResult export(Team team)
@@ -69,7 +69,7 @@ public class TeamController extends BaseController
     }
 
     /**
-     * 新增【请填写功能名称】
+     * 新增球队
      */
     @GetMapping("/add")
     public String add()
@@ -78,10 +78,10 @@ public class TeamController extends BaseController
     }
 
     /**
-     * 新增保存【请填写功能名称】
+     * 新增保存球队
      */
     @RequiresPermissions("system:team:add")
-    @Log(title = "【请填写功能名称】", businessType = BusinessType.INSERT)
+    @Log(title = "球队", businessType = BusinessType.INSERT)
     @PostMapping("/add")
     @ResponseBody
     public AjaxResult addSave(Team team)
@@ -90,7 +90,7 @@ public class TeamController extends BaseController
     }
 
     /**
-     * 修改【请填写功能名称】
+     * 修改球队
      */
     @GetMapping("/edit/{id}")
     public String edit(@PathVariable("id") Long id, ModelMap mmap)
@@ -101,10 +101,10 @@ public class TeamController extends BaseController
     }
 
     /**
-     * 修改保存【请填写功能名称】
+     * 修改保存球队
      */
     @RequiresPermissions("system:team:edit")
-    @Log(title = "【请填写功能名称】", businessType = BusinessType.UPDATE)
+    @Log(title = "球队", businessType = BusinessType.UPDATE)
     @PostMapping("/edit")
     @ResponseBody
     public AjaxResult editSave(Team team)
@@ -113,10 +113,10 @@ public class TeamController extends BaseController
     }
 
     /**
-     * 删除【请填写功能名称】
+     * 删除球队
      */
     @RequiresPermissions("system:team:remove")
-    @Log(title = "【请填写功能名称】", businessType = BusinessType.DELETE)
+    @Log(title = "球队", businessType = BusinessType.DELETE)
     @PostMapping( "/remove")
     @ResponseBody
     public AjaxResult remove(String ids)

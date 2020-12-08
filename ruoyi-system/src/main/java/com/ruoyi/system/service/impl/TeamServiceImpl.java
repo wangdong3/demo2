@@ -9,7 +9,7 @@ import com.ruoyi.system.service.ITeamService;
 import com.ruoyi.common.core.text.Convert;
 
 /**
- * 【请填写功能名称】Service业务层处理
+ * 球队Service业务层处理
  * 
  * @author ruoyi
  * @date 2020-12-03
@@ -21,10 +21,10 @@ public class TeamServiceImpl implements ITeamService
     private TeamMapper teamMapper;
 
     /**
-     * 查询【请填写功能名称】
+     * 查询球队
      * 
-     * @param id 【请填写功能名称】ID
-     * @return 【请填写功能名称】
+     * @param id 球队ID
+     * @return 球队
      */
     @Override
     public Team selectTeamById(Long id)
@@ -33,10 +33,10 @@ public class TeamServiceImpl implements ITeamService
     }
 
     /**
-     * 查询【请填写功能名称】列表
+     * 查询球队列表
      * 
-     * @param team 【请填写功能名称】
-     * @return 【请填写功能名称】
+     * @param team 球队
+     * @return 球队
      */
     @Override
     public List<Team> selectTeamList(Team team)
@@ -45,9 +45,9 @@ public class TeamServiceImpl implements ITeamService
     }
 
     /**
-     * 新增【请填写功能名称】
+     * 新增球队
      * 
-     * @param team 【请填写功能名称】
+     * @param team 球队
      * @return 结果
      */
     @Override
@@ -57,9 +57,9 @@ public class TeamServiceImpl implements ITeamService
     }
 
     /**
-     * 修改【请填写功能名称】
+     * 修改球队
      * 
-     * @param team 【请填写功能名称】
+     * @param team 球队
      * @return 结果
      */
     @Override
@@ -69,7 +69,7 @@ public class TeamServiceImpl implements ITeamService
     }
 
     /**
-     * 删除【请填写功能名称】对象
+     * 删除球队对象
      * 
      * @param ids 需要删除的数据ID
      * @return 结果
@@ -81,9 +81,9 @@ public class TeamServiceImpl implements ITeamService
     }
 
     /**
-     * 删除【请填写功能名称】信息
+     * 删除球队信息
      * 
-     * @param id 【请填写功能名称】ID
+     * @param id 球队ID
      * @return 结果
      */
     @Override

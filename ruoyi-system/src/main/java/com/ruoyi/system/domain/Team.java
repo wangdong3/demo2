@@ -6,7 +6,7 @@ import com.ruoyi.common.annotation.Excel;
 import com.ruoyi.common.core.domain.BaseEntity;
 
 /**
- * 【请填写功能名称】对象 team
+ * 球队对象 team
  * 
  * @author ruoyi
  * @date 2020-12-03
