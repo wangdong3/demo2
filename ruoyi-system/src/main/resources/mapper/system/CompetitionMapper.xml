@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.CompetitionMapper">
+    
+    <resultMap type="Competition" id="CompetitionResult">
+        <result property="id"    column="id"    />
+        <result property="teamAId"    column="team_a_id"    />
+        <result property="teamBId"    column="team_b_id"    />
+        <result property="gameTime"    column="game_time"    />
+        <result property="site"    column="site"    />
+        <result property="session"    column="session"    />
+        <result property="partAGoals"    column="part_a_goals"    />
+        <result property="partBGoals"    column="part_b_goals"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectCompetitionVo">
+        select id, team_a_id, team_b_id, game_time, site, session, part_a_goals, part_b_goals, create_by, create_time, update_by, update_time from competition
+    </sql>
+
+    <select id="selectCompetitionList" parameterType="Competition" resultMap="CompetitionResult">
+        <include refid="selectCompetitionVo"/>
+        <where>  
+            <if test="teamAId != null "> and team_a_id = #{teamAId}</if>
+            <if test="teamBId != null "> and team_b_id = #{teamBId}</if>
+            <if test="gameTime != null "> and game_time = #{gameTime}</if>
+            <if test="site != null  and site != ''"> and site = #{site}</if>
+            <if test="session != null  and session != ''"> and session = #{session}</if>
+            <if test="partAGoals != null "> and part_a_goals = #{partAGoals}</if>
+            <if test="partBGoals != null "> and part_b_goals = #{partBGoals}</if>
+        </where>
+    </select>
+    
+    <select id="selectCompetitionById" parameterType="Long" resultMap="CompetitionResult">
+        <include refid="selectCompetitionVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertCompetition" parameterType="Competition" useGeneratedKeys="true" keyProperty="id">
+        insert into competition
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="teamAId != null">team_a_id,</if>
+            <if test="teamBId != null">team_b_id,</if>
+            <if test="gameTime != null">game_time,</if>
+            <if test="site != null">site,</if>
+            <if test="session != null">session,</if>
+            <if test="partAGoals != null">part_a_goals,</if>
+            <if test="partBGoals != null">part_b_goals,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="teamAId != null">#{teamAId},</if>
+            <if test="teamBId != null">#{teamBId},</if>
+            <if test="gameTime != null">#{gameTime},</if>
+            <if test="site != null">#{site},</if>
+            <if test="session != null">#{session},</if>
+            <if test="partAGoals != null">#{partAGoals},</if>
+            <if test="partBGoals != null">#{partBGoals},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateCompetition" parameterType="Competition">
+        update competition
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="teamAId != null">team_a_id = #{teamAId},</if>
+            <if test="teamBId != null">team_b_id = #{teamBId},</if>
+            <if test="gameTime != null">game_time = #{gameTime},</if>
+            <if test="site != null">site = #{site},</if>
+            <if test="session != null">session = #{session},</if>
+            <if test="partAGoals != null">part_a_goals = #{partAGoals},</if>
+            <if test="partBGoals != null">part_b_goals = #{partBGoals},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteCompetitionById" parameterType="Long">
+        delete from competition where id = #{id}
+    </delete>
+
+    <delete id="deleteCompetitionByIds" parameterType="String">
+        delete from competition where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>

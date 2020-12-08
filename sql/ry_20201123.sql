@@ -767,3 +767,81 @@ values('新闻删除', '1', '4',  '#',  'F', '0', 'system:news:remove',       '#
 
 insert into sys_menu (menu_name, parent_id, order_num, url, menu_type, visible, perms, icon, create_by, create_time, update_by, update_time, remark)
 values('新闻导出', '1', '5',  '#',  'F', '0', 'system:news:export',       '#', 'admin', sysdate(), '', null, '');
+
+CREATE TABLE `player` (
+  `id` int NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `team_id` bigint NOT NULL COMMENT '球队id',
+  `head_portrait` varchar(50) NOT NULL COMMENT '头像',
+  `name` varchar(2000) DEFAULT NULL COMMENT '姓名',
+  `birthdate` date DEFAULT NULL COMMENT '出生年月',
+  `location` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '位置',
+  `nationality` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '国籍/籍贯',
+  `appearance` int DEFAULT NULL COMMENT '出场',
+  `goals` int DEFAULT NULL COMMENT '进球',
+  `create_by` varchar(64) DEFAULT '' COMMENT '创建者',
+  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+  `update_by` varchar(64) DEFAULT '' COMMENT '更新者',
+  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COMMENT='球员表';
+
+-- 菜单 SQL
+insert into sys_menu (menu_name, parent_id, order_num, url, menu_type, visible, perms, icon, create_by, create_time, update_by, update_time, remark)
+values('球员管理', '1', '1', '/system/player', 'C', '0', 'system:player:view', '#', 'admin', sysdate(), '', null, '球员菜单');
+
+-- 按钮父菜单ID
+
+-- 按钮 SQL
+insert into sys_menu (menu_name, parent_id, order_num, url, menu_type, visible, perms, icon, create_by, create_time, update_by, update_time, remark)
+values('球员查询', '1', '1',  '#',  'F', '0', 'system:player:list',         '#', 'admin', sysdate(), '', null, '');
+
+insert into sys_menu (menu_name, parent_id, order_num, url, menu_type, visible, perms, icon, create_by, create_time, update_by, update_time, remark)
+values('球员新增', '1', '2',  '#',  'F', '0', 'system:player:add',          '#', 'admin', sysdate(), '', null, '');
+
+insert into sys_menu (menu_name, parent_id, order_num, url, menu_type, visible, perms, icon, create_by, create_time, update_by, update_time, remark)
+values('球员修改', '1', '3',  '#',  'F', '0', 'system:player:edit',         '#', 'admin', sysdate(), '', null, '');
+
+insert into sys_menu (menu_name, parent_id, order_num, url, menu_type, visible, perms, icon, create_by, create_time, update_by, update_time, remark)
+values('球员删除', '1', '4',  '#',  'F', '0', 'system:player:remove',       '#', 'admin', sysdate(), '', null, '');
+
+insert into sys_menu (menu_name, parent_id, order_num, url, menu_type, visible, perms, icon, create_by, create_time, update_by, update_time, remark)
+values('球员导出', '1', '5',  '#',  'F', '0', 'system:player:export',       '#', 'admin', sysdate(), '', null, '');
+
+
+CREATE TABLE `competition` (
+  `id` int NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `team_a_id` bigint NOT NULL  COMMENT '参赛球队甲方id',
+  `team_b_id` bigint NOT NULL  COMMENT '参赛球队乙方id',
+  `game_time` datetime DEFAULT NULL COMMENT '时间',
+  `site` varchar(200) DEFAULT NULL COMMENT '地点',
+  `session` varchar(20) DEFAULT NULL COMMENT '场次',
+  `part_a_goals` int DEFAULT NULL COMMENT '甲方球队分数',
+  `part_b_goals` int DEFAULT NULL COMMENT '乙方球队分数',
+  `create_by` varchar(64) DEFAULT '' COMMENT '创建者',
+  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+  `update_by` varchar(64) DEFAULT '' COMMENT '更新者',
+  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COMMENT='赛程表';
+
+-- 菜单 SQL
+insert into sys_menu (menu_name, parent_id, order_num, url, menu_type, visible, perms, icon, create_by, create_time, update_by, update_time, remark)
+values('赛程管理', '1', '1', '/system/competition', 'C', '0', 'system:competition:view', '#', 'admin', sysdate(), '', null, '赛程菜单');
+
+-- 按钮父菜单ID
+
+-- 按钮 SQL
+insert into sys_menu (menu_name, parent_id, order_num, url, menu_type, visible, perms, icon, create_by, create_time, update_by, update_time, remark)
+values('赛程查询', '1', '1',  '#',  'F', '0', 'system:competition:list',         '#', 'admin', sysdate(), '', null, '');
+
+insert into sys_menu (menu_name, parent_id, order_num, url, menu_type, visible, perms, icon, create_by, create_time, update_by, update_time, remark)
+values('赛程新增', '1', '2',  '#',  'F', '0', 'system:competition:add',          '#', 'admin', sysdate(), '', null, '');
+
+insert into sys_menu (menu_name, parent_id, order_num, url, menu_type, visible, perms, icon, create_by, create_time, update_by, update_time, remark)
+values('赛程修改', '1', '3',  '#',  'F', '0', 'system:competition:edit',         '#', 'admin', sysdate(), '', null, '');
+
+insert into sys_menu (menu_name, parent_id, order_num, url, menu_type, visible, perms, icon, create_by, create_time, update_by, update_time, remark)
+values('赛程删除', '1', '4',  '#',  'F', '0', 'system:competition:remove',       '#', 'admin', sysdate(), '', null, '');
+
+insert into sys_menu (menu_name, parent_id, order_num, url, menu_type, visible, perms, icon, create_by, create_time, update_by, update_time, remark)
+values('赛程导出', '1', '5',  '#',  'F', '0', 'system:competition:export',       '#', 'admin', sysdate(), '', null, '');

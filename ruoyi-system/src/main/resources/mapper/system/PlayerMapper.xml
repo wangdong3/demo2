@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.PlayerMapper">
+    
+    <resultMap type="Player" id="PlayerResult">
+        <result property="id"    column="id"    />
+        <result property="teamId"    column="team_id"    />
+        <result property="headPortrait"    column="head_portrait"    />
+        <result property="name"    column="name"    />
+        <result property="birthdate"    column="birthdate"    />
+        <result property="location"    column="location"    />
+        <result property="nationality"    column="nationality"    />
+        <result property="appearance"    column="appearance"    />
+        <result property="goals"    column="goals"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectPlayerVo">
+        select id, team_id, head_portrait, name, birthdate, location, nationality, appearance, goals, create_by, create_time, update_by, update_time from player
+    </sql>
+
+    <select id="selectPlayerList" parameterType="Player" resultMap="PlayerResult">
+        <include refid="selectPlayerVo"/>
+        <where>  
+            <if test="teamId != null "> and team_id = #{teamId}</if>
+            <if test="headPortrait != null  and headPortrait != ''"> and head_portrait = #{headPortrait}</if>
+            <if test="name != null  and name != ''"> and name like concat('%', #{name}, '%')</if>
+            <if test="birthdate != null  and birthdate != ''"> and birthdate = #{birthdate}</if>
+            <if test="location != null  and location != ''"> and location = #{location}</if>
+            <if test="nationality != null  and nationality != ''"> and nationality = #{nationality}</if>
+            <if test="appearance != null  and appearance != ''"> and appearance = #{appearance}</if>
+            <if test="goals != null  and goals != ''"> and goals = #{goals}</if>
+        </where>
+    </select>
+    
+    <select id="selectPlayerById" parameterType="Long" resultMap="PlayerResult">
+        <include refid="selectPlayerVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertPlayer" parameterType="Player" useGeneratedKeys="true" keyProperty="id">
+        insert into player
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="teamId != null">team_id,</if>
+            <if test="headPortrait != null and headPortrait != ''">head_portrait,</if>
+            <if test="name != null">name,</if>
+            <if test="birthdate != null">birthdate,</if>
+            <if test="location != null">location,</if>
+            <if test="nationality != null">nationality,</if>
+            <if test="appearance != null">appearance,</if>
+            <if test="goals != null">goals,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="teamId != null">#{teamId},</if>
+            <if test="headPortrait != null and headPortrait != ''">#{headPortrait},</if>
+            <if test="name != null">#{name},</if>
+            <if test="birthdate != null">#{birthdate},</if>
+            <if test="location != null">#{location},</if>
+            <if test="nationality != null">#{nationality},</if>
+            <if test="appearance != null">#{appearance},</if>
+            <if test="goals != null">#{goals},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updatePlayer" parameterType="Player">
+        update player
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="teamId != null">team_id = #{teamId},</if>
+            <if test="headPortrait != null and headPortrait != ''">head_portrait = #{headPortrait},</if>
+            <if test="name != null">name = #{name},</if>
+            <if test="birthdate != null">birthdate = #{birthdate},</if>
+            <if test="location != null">location = #{location},</if>
+            <if test="nationality != null">nationality = #{nationality},</if>
+            <if test="appearance != null">appearance = #{appearance},</if>
+            <if test="goals != null">goals = #{goals},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deletePlayerById" parameterType="Long">
+        delete from player where id = #{id}
+    </delete>
+
+    <delete id="deletePlayerByIds" parameterType="String">
+        delete from player where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>
