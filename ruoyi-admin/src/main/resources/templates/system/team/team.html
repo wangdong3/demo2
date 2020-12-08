@@ -10,42 +10,42 @@
                 <form id="formId">
                     <div class="select-list">
                         <ul>
-                            <li>
-                                <label>${comment}：</label>
+                            <!--<li>
+                                <label>logo：</label>
                                 <input type="text" name="logo"/>
-                            </li>
+                            </li>-->
                             <li>
-                                <label>${comment}：</label>
+                                <label>名称：</label>
                                 <input type="text" name="name"/>
                             </li>
-                            <li>
-                                <label>${comment}：</label>
+                            <!--<li>
+                                <label>赢：</label>
                                 <input type="text" name="win"/>
                             </li>
                             <li>
-                                <label>${comment}：</label>
+                                <label>输：</label>
                                 <input type="text" name="lose"/>
                             </li>
                             <li>
-                                <label>${comment}：</label>
+                                <label>平：</label>
                                 <input type="text" name="flat"/>
                             </li>
                             <li>
-                                <label>${comment}：</label>
+                                <label>积分：</label>
                                 <input type="text" name="score"/>
-                            </li>
+                            </li>-->
                             <li>
-                                <label>${comment}：</label>
+                                <label>场次：</label>
                                 <input type="text" name="session"/>
                             </li>
-                            <li>
-                                <label>${comment}：</label>
+                            <!--<li>
+                                <label>进球：</label>
                                 <input type="text" name="goal"/>
                             </li>
                             <li>
-                                <label>${comment}：</label>
+                                <label>丢球：</label>
                                 <input type="text" name="conceded"/>
-                            </li>
+                            </li>-->
                             <li>
                                 <a class="btn btn-primary btn-rounded btn-sm" onclick="$.table.search()"><i class="fa fa-search"></i>&nbsp;搜索</a>
                                 <a class="btn btn-warning btn-rounded btn-sm" onclick="$.form.reset()"><i class="fa fa-refresh"></i>&nbsp;重置</a>
@@ -87,45 +87,45 @@
                 updateUrl: prefix + "/edit/{id}",
                 removeUrl: prefix + "/remove",
                 exportUrl: prefix + "/export",
-                modalName: "【请填写功能名称】",
+                modalName: "球队管理",
                 columns: [{
                     checkbox: true
                 },
-                {
+                /*{
                     field: 'logo',
-                    title: '${comment}'
-                },
+                    title: 'logo'
+                },*/
                 {
                     field: 'name',
-                    title: '${comment}'
+                    title: '名称'
                 },
                 {
                     field: 'win',
-                    title: '${comment}'
+                    title: '赢'
                 },
                 {
                     field: 'lose',
-                    title: '${comment}'
+                    title: '输'
                 },
                 {
                     field: 'flat',
-                    title: '${comment}'
+                    title: '平'
                 },
                 {
                     field: 'score',
-                    title: '${comment}'
+                    title: '积分'
                 },
                 {
                     field: 'session',
-                    title: '${comment}'
+                    title: '场次'
                 },
                 {
                     field: 'goal',
-                    title: '${comment}'
+                    title: '进球'
                 },
                 {
                     field: 'conceded',
-                    title: '${comment}'
+                    title: '丢球'
                 },
                 {
                     title: '操作',

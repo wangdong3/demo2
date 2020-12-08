@@ -10,12 +10,17 @@
     <link href="../static/css/font-awesome.min.css" th:href="@{/css/font-awesome.min.css}" rel="stylesheet"/>
     <link href="../static/css/main/animate.min.css" th:href="@{/css/main/animate.min.css}" rel="stylesheet"/>
     <link href="../static/css/main/style.min862f.css" th:href="@{/css/main/style.min862f.css}" rel="stylesheet"/>
+    <link href="../static/css/main/layui.css"  th:href="@{/css/main/layui.css}" media="all" rel="stylesheet">
+
     <style>
         .logoWidth{
             width: 30%;
         }
         .logoHeight{
             height: 70%;
+        }
+        .fr{
+            float: right;
         }
     </style>
 </head>
@@ -32,7 +37,7 @@
                 <h4 class="text-danger">云产品通用红包，可叠加官网常规优惠使用。(仅限新用户)</h4>
             </blockquote>-->
 			<div class="layui-carousel" id="test1" lay-filter="test1">
-				<div carousel-item="" style="vertical-align: middle;text-align: center;">
+				<div style="vertical-align: middle;text-align: center;">
 					<img th:src="@{/img/banner.jpg}">
 				</div>
 			</div>
@@ -68,19 +73,110 @@
             <img class="logoHeight" th:src="@{/img/team/Fv6HRz-L8N9SnYbtDmLtF00j6fY4}" alt="" style="cursor:pointer;">
             <img class="logoHeight" th:src="@{/img/team/Fvb9LOb7OzM650iMqmJRp1PsF512}" alt="" style="cursor:pointer;">
         </div>
-        <div class="col-sm-6">
-            <h2>赛程</h2>
-            <p>2020-12-02</p>
 
-            <p>1.中国队 vs 韩国队  <span>2020-12-04 18:00</span></p>
-            <p>2.巴西队 vs 德国队  <span>2020-12-04 18:00</span></p>
-
+        <div class="col-sm-8">
+            <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+                <legend>赛事新闻</legend>
+            </fieldset>
+            <div style="padding: 20px; background-color: #F2F2F2;">
+                <div class="layui-row layui-col-space15">
+                    <div class="layui-col-md12">
+                        <div class="layui-card">
+                            <div class="layui-card-header">
+                                <a>用足球与媒体的力量唤燃亿心 2020中国平安中超联赛媒体传播大盘点</a>
+                                <span class="fr">2020-11-16 05:10:00</span></div>
+                            <div class="layui-card-body">
+                                内容...
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md12">
+                        <div class="layui-card">
+                            <div class="layui-card-header">
+                                <a>2020赛季中国足球协会超甲升降级附加赛赛程发布</a>
+                                <span class="fr">2020-11-16 05:10:00</span></div>
+                            <div class="layui-card-body">
+                                11月18日19:35，浙江能源绿城VS武汉卓尔的比赛将在苏州奥林匹克体育中心进行。
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md12">
+                        <div class="layui-card">
+                            <div class="layui-card-header">
+                                <a>赛后声音 | 超甲升降级附加赛次回合武汉卓尔VS浙江能源绿城赛后新闻发布会综述</a>
+                                <span class="fr">2020-11-22 22:17:51</span></div>
+                            <div class="layui-card-body">
+                                11月22日19:35，2020赛季中国足球协会超甲升降级附加赛次回合，武汉卓尔1-0小胜浙江能源绿城。赛后，绿城主教练郑雄、卓尔领队庞利出席了赛后新闻发布会。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-sm-6">
-            <h4>新闻</h4>
-            <p>
+        <div class="col-sm-4">
+            <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+                <legend>球队排行榜</legend>
+            </fieldset>
+            <div class="ibox float-e-margins">
+                    <!--<div class="ibox-title">
+                        <h5>球队排行榜</h5>
+                    </div>-->
+                <div class="ibox-content no-padding">
+                    <div class="panel-body">
+                        <table class="layui-table" lay-even="" lay-skin="nob">
+                            <colgroup>
+                                <col width="150">
+                                <col width="150">
+                                <col width="200">
+                                <col width="150">
+                            </colgroup>
+                            <thead>
+                            <tr>
+                                <th>排名</th>
+                                <th>球队</th>
+                                <th>积分</th>
+                                <th>场次</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td><img class="logoWidth" th:src="@{/img/team/FgVAEKNTP255RO3YPQuCKR5ceuTd}"></td>
+                                <td>33</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td><img class="logoWidth" th:src="@{/img/team/FhbRzK1_fX0fWJr9TmxsDbwLjSDj}"></td>
+                                <td>32</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td><img class="logoWidth" th:src="@{/img/team/FhbXg7FZf3UtjiHgeKGFpyaU86vP}"></td>
+                                <td>22</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td><img class="logoWidth" th:src="@{/img/team/FhnVQd9tUYHhw9Ku-j1n00UdAq8Z}"></td>
+                                <td>21</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td><img class="logoWidth" th:src="@{/img/team/FiHTwQi7DEP84Imh2x3Agznej55f}"></td>
+                                <td>20</td>
+                                <td>1</td>
+                            </tr>
+                            </tbody>
+                        </table>
 
-            </p>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
 
     </div>
@@ -109,67 +205,24 @@
             <div class="col-sm-4">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <h5>球队排行榜</h5>
+                        <h5>赛程</h5>
                     </div>
-                    <div class="ibox-content no-padding">
-                        <div class="panel-body">
-                            <table class="layui-table" lay-even="" lay-skin="nob">
-                                <colgroup>
-                                    <col width="150">
-                                    <col width="150">
-                                    <col width="200">
-                                    <col>
-                                </colgroup>
-                                <thead>
-                                <tr>
-                                    <th>排名</th>
-                                    <th>球队</th>
-                                    <th>积分</th>
-                                    <th>场次</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td><img class="logoWidth" th:src="@{/img/team/FgVAEKNTP255RO3YPQuCKR5ceuTd}"></td>
-                                    <td>33</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td><img class="logoWidth" th:src="@{/img/team/FhbRzK1_fX0fWJr9TmxsDbwLjSDj}"></td>
-                                    <td>32</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td><img class="logoWidth" th:src="@{/img/team/FhbXg7FZf3UtjiHgeKGFpyaU86vP}"></td>
-                                    <td>22</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td><img class="logoWidth" th:src="@{/img/team/FhnVQd9tUYHhw9Ku-j1n00UdAq8Z}"></td>
-                                    <td>21</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td><img class="logoWidth" th:src="@{/img/team/FiHTwQi7DEP84Imh2x3Agznej55f}"></td>
-                                    <td>20</td>
-                                    <td>1</td>
-                                </tr>
-                                </tbody>
-                            </table>
+                    <div class="ibox-content">
+                        <ol>
+                            <li><p>1.中国队 vs 韩国队<span>2020-12-04 18:00</span></p></li>
+                            <li><p>2.巴西队 vs 德国队<span>2020-12-04 18:00</span></p></li>
 
-                        </div>
+
+                            <li>更多……</li>
+                        </ol>
                     </div>
                 </div>
+
             </div>
             <div class="col-sm-4">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <h5>捐赠</h5>
+                        <h5></h5>
                     </div>
                     <div class="ibox-content">
                         <!--<div class="alert alert-warning">
