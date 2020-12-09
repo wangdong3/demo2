@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit">
-    <title>若依系统首页</title>
+    <title>中超联赛管理系统首页</title>
     <!-- 避免IE使用兼容模式 -->
  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link th:href="@{favicon.ico}" rel="shortcut icon"/>
@@ -26,7 +26,7 @@
         </div>
         <a th:href="@{/index}">
             <li class="logo hidden-xs">
-                <span class="logo-lg">RuoYi</span>
+                <span class="logo-lg">中超联赛系统</span>
             </li>
          </a>
         <div class="sidebar-collapse">
@@ -191,7 +191,7 @@
                     <li class="dropdown user-menu">
 						<a href="javascript:void(0)" class="dropdown-toggle" data-hover="dropdown">
 							<img th:src="(${#strings.isEmpty(user.avatar)}) ? @{/img/profile.jpg} : @{${user.avatar}}" th:onerror="this.src='img/profile.jpg'" class="user-image">
-							<span class="hidden-xs">[[${#strings.defaultString(user.userName, '-')}]]</span>
+							<span class="hidden-xs">[[${#strings.defaultString(user.loginName, '-')}]]</span>
 						</a>
 						<ul class="dropdown-menu">
 							<li class="mt5">
