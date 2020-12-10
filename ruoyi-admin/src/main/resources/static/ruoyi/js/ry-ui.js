@@ -71,6 +71,7 @@ var table = {
                     fixedRightNumber: 0,
                     queryParams: $.table.queryParams,
                     rowStyle: {},
+                    classes:"table table-bordered"
                 };
             	var options = $.extend(defaults, options);
             	table.options = options;
@@ -143,6 +144,7 @@ var table = {
                     onLoadSuccess: $.table.onLoadSuccess,               // 当所有数据被加载时触发处理函数
                     exportOptions: options.exportOptions,               // 前端导出忽略列索引
                     detailFormatter: options.detailFormatter,           // 在行下面展示其他数据列表
+                    classes: options.classes
                 });
             },
             // 获取实例ID，如存在多个返回#id1,#id2 delimeter分隔符

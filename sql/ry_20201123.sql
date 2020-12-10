@@ -845,3 +845,21 @@ values('赛程删除', '1', '4',  '#',  'F', '0', 'system:competition:remove',  
 
 insert into sys_menu (menu_name, parent_id, order_num, url, menu_type, visible, perms, icon, create_by, create_time, update_by, update_time, remark)
 values('赛程导出', '1', '5',  '#',  'F', '0', 'system:competition:export',       '#', 'admin', sysdate(), '', null, '');
+
+
+INSERT INTO `ry`.`team`(`id`, `logo`, `name`, `win`, `lose`, `flat`, `score`, `session`, `goal`, `conceded`) VALUES (7990775794644878300, 'Fun6NJ2j9vFHViXGT9M5UvY-V7QL', '广州恒大淘宝', 1, 1, 1, 1, 1, 1, 1);
+INSERT INTO `ry`.`team`(`id`, `logo`, `name`, `win`, `lose`, `flat`, `score`, `session`, `goal`, `conceded`) VALUES (7990775794644878301, 'FoBIzWyGBez6hMwpJ4kDW87dgI75', '北京中赫国安', 1, 1, 1, 1, 1, 1, 1);
+INSERT INTO `ry`.`team`(`id`, `logo`, `name`, `win`, `lose`, `flat`, `score`, `session`, `goal`, `conceded`) VALUES (7990775794644878302, 'Fv6HRz-L8N9SnYbtDmLtF00j6fY4', '上海上港', 1, 1, 1, 1, 1, 1, 1);
+INSERT INTO `ry`.`team`(`id`, `logo`, `name`, `win`, `lose`, `flat`, `score`, `session`, `goal`, `conceded`) VALUES (7990775794644878303, 'FoSZaaHVVdsq72dMvUm73JM-LucZ', '江苏苏宁易购', 1, 1, 1, 1, 1, 1, 1);
+INSERT INTO `ry`.`team`(`id`, `logo`, `name`, `win`, `lose`, `flat`, `score`, `session`, `goal`, `conceded`) VALUES (7990775794644878304, 'Frz1t0c2uTVFoAkuFuZ0Vd0m5uIi', '山东鲁能泰山', 1, 1, 1, 1, 1, 1, 1);
+INSERT INTO `ry`.`team`(`id`, `logo`, `name`, `win`, `lose`, `flat`, `score`, `session`, `goal`, `conceded`) VALUES (7990775794644878305, 'FiHTwQi7DEP84Imh2x3Agznej55f', '武汉卓尔', 1, 1, 1, 1, 1, 1, 1);
+INSERT INTO `ry`.`team`(`id`, `logo`, `name`, `win`, `lose`, `flat`, `score`, `session`, `goal`, `conceded`) VALUES (7990775794644878306, 'FtS-frsJHyHO4gbzoaeGpESetGK_', '天津泰达', 1, 1, 1, 1, 1, 1, 1);
+INSERT INTO `ry`.`team`(`id`, `logo`, `name`, `win`, `lose`, `flat`, `score`, `session`, `goal`, `conceded`) VALUES (7990775794644878307, 'FhbXg7FZf3UtjiHgeKGFpyaU86vP', '河南建业', 1, 1, 1, 1, 1, 1, 1);
+INSERT INTO `ry`.`team`(`id`, `logo`, `name`, `win`, `lose`, `flat`, `score`, `session`, `goal`, `conceded`) VALUES (7990775794644878308, 'FiTVAwpnl506Lj28aEZdXN6O_NTY', '大连一方', 1, 1, 1, 1, 1, 1, 1);
+INSERT INTO `ry`.`team`(`id`, `logo`, `name`, `win`, `lose`, `flat`, `score`, `session`, `goal`, `conceded`) VALUES (7990775794644878309, 'FhnVQd9tUYHhw9Ku-j1n00UdAq8Z', '重庆斯威', 1, 1, 1, 1, 1, 1, 1);
+INSERT INTO `ry`.`team`(`id`, `logo`, `name`, `win`, `lose`, `flat`, `score`, `session`, `goal`, `conceded`) VALUES (7990775794644878310, 'FqtHmS_1OZRajvJ9Km4U1U5f3VAO', '河北华夏幸福', 1, 1, 1, 1, 1, 1, 1);
+INSERT INTO `ry`.`team`(`id`, `logo`, `name`, `win`, `lose`, `flat`, `score`, `session`, `goal`, `conceded`) VALUES (7990775794644878311, 'FgVAEKNTP255RO3YPQuCKR5ceuTd', '广州富力', 1, 1, 1, 1, 1, 1, 1);
+INSERT INTO `ry`.`team`(`id`, `logo`, `name`, `win`, `lose`, `flat`, `score`, `session`, `goal`, `conceded`) VALUES (7990775794644878312, 'FmvJJIM4MaN3SqUByPSx_uY9F-yb', '上海绿地申花', 1, 1, 1, 1, 1, 1, 1);
+INSERT INTO `ry`.`team`(`id`, `logo`, `name`, `win`, `lose`, `flat`, `score`, `session`, `goal`, `conceded`) VALUES (7990775794644878313, 'Fvb9LOb7OzM650iMqmJRp1PsF512', '天津天海', 1, 1, 1, 1, 1, 1, 1);
+INSERT INTO `ry`.`team`(`id`, `logo`, `name`, `win`, `lose`, `flat`, `score`, `session`, `goal`, `conceded`) VALUES (7990775794644878314, 'Fs0VE3zzoh316SLPKaQ3jXDSa-Jo', '深圳佳兆业', 1, 1, 1, 1, 1, 1, 1);
+INSERT INTO `ry`.`team`(`id`, `logo`, `name`, `win`, `lose`, `flat`, `score`, `session`, `goal`, `conceded`) VALUES (7990775794644878315, 'FijuS5LjoA_WjcdWtv3qodW2I3aX', '北京人和', 1, 1, 1, 1, 1, 1, 1);

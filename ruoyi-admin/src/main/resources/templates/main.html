@@ -16,6 +16,9 @@
         .logoWidth{
             width: 30%;
         }
+        .logoWidth15{
+            width: 15%;
+        }
         .logoHeight{
             height: 70%;
         }
@@ -74,7 +77,7 @@
             <img class="logoHeight" th:src="@{/img/team/Fvb9LOb7OzM650iMqmJRp1PsF512}" alt="" style="cursor:pointer;">
         </div>
 
-        <div class="col-sm-8">
+        <div class="col-sm-9">
             <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
                 <legend>赛事新闻</legend>
             </fieldset>
@@ -94,7 +97,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-3">
             <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
                 <legend>球队排行榜</legend>
             </fieldset>
@@ -102,59 +105,11 @@
                     <!--<div class="ibox-title">
                         <h5>球队排行榜</h5>
                     </div>-->
-                <div class="ibox-content no-padding">
-                    <div class="panel-body">
-                        <table class="layui-table" lay-even="" lay-skin="nob">
-                            <colgroup>
-                                <col width="150">
-                                <col width="150">
-                                <col width="200">
-                                <col width="150">
-                            </colgroup>
-                            <thead>
-                            <tr>
-                                <th>排名</th>
-                                <th>球队</th>
-                                <th>积分</th>
-                                <th>场次</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td><img class="logoWidth" th:src="@{/img/team/FgVAEKNTP255RO3YPQuCKR5ceuTd}"></td>
-                                <td>33</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td><img class="logoWidth" th:src="@{/img/team/FhbRzK1_fX0fWJr9TmxsDbwLjSDj}"></td>
-                                <td>32</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td><img class="logoWidth" th:src="@{/img/team/FhbXg7FZf3UtjiHgeKGFpyaU86vP}"></td>
-                                <td>22</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td><img class="logoWidth" th:src="@{/img/team/FhnVQd9tUYHhw9Ku-j1n00UdAq8Z}"></td>
-                                <td>21</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td><img class="logoWidth" th:src="@{/img/team/FiHTwQi7DEP84Imh2x3Agznej55f}"></td>
-                                <td>20</td>
-                                <td>1</td>
-                            </tr>
-                            </tbody>
-                        </table>
-
-                    </div>
-                </div>
+                <!--<div class="ibox-content no-padding">-->
+                    <!--<div class="panel-body">-->
+                        <table id="bootstrap-table"></table>
+                    <!--</div>-->
+                <!--</div>-->
             </div>
 
 
@@ -222,18 +177,86 @@
     <script th:src="@{/js/jquery.min.js}"></script>
     <script th:src="@{/js/bootstrap.min.js}"></script>
     <script th:src="@{/ajax/libs/layer/layer.min.js}"></script>
-    <script type="text/javascript">
-	    $('#pay-qrcode').click(function(){
-	        var html=$(this).html();
-	        parent.layer.open({
-	            title: false,
-	            type: 1,
-	            closeBtn:false,
-	            shadeClose:true,
-	            area: ['600px', '360px'],
-	            content: html
-	        });
-	    });
+    <th:block th:include="include :: footer" />
+   <!-- <script type="text/javascript">
+
+    </script>-->
+    <script th:inline="javascript">
+        $(function() {
+            var options = {
+                url: "team/list",
+                modalName: "球队管理",
+                pagination: false,
+                showSearch: false,
+                showRefresh: false,
+                showToggle: false,
+                showColumns: false,
+                striped: true,
+                sortName: "score",
+                sortOrder: "desc",
+                classes: "table table-no-bordered table-striped table-hover",
+                columns: [
+                    {
+                        field: '',
+                        title: '排名',
+                        formatter: function(value, row, index) {
+                            return index + 1;
+                        }
+                    },
+                    {
+                        field: 'name',
+                        title: '球队',
+                        formatter: function(value, row, index) {
+                            var actions = [];
+                            var imgPath = "../img/team/" + row.logo;
+                            actions.push('<img class="logoWidth15" src=' + imgPath + '>');
+                            actions.push(value);
+                            return actions.join(' ');
+                        }
+                    },
+                    /*{
+                        field: 'win',
+                        title: '赢'
+                    },
+                    {
+                        field: 'lose',
+                        title: '输'
+                    },*/
+                    {
+                        field: 'score',
+                        title: '积分'
+                    },
+                    {
+                        field: 'session',
+                        title: '场次'
+                    }/*,{
+                        field: 'flat',
+                        title: '平'
+                    },
+                    {
+                        field: 'goal',
+                        title: '进球'
+                    },
+                    {
+                        field: 'conceded',
+                        title: '丢球'
+                    }*/]
+            };
+            $.table.init(options);
+
+        });
+
+        $('#pay-qrcode').click(function(){
+            var html=$(this).html();
+            parent.layer.open({
+                title: false,
+                type: 1,
+                closeBtn:false,
+                shadeClose:true,
+                area: ['600px', '360px'],
+                content: html
+            });
+        });
 
         /*var newsList = [];
         var newsUrl = "/ry/system/news/list";
