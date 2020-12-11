@@ -863,3 +863,4 @@ INSERT INTO `ry`.`team`(`id`, `logo`, `name`, `win`, `lose`, `flat`, `score`, `s
 INSERT INTO `ry`.`team`(`id`, `logo`, `name`, `win`, `lose`, `flat`, `score`, `session`, `goal`, `conceded`) VALUES (7990775794644878313, 'Fvb9LOb7OzM650iMqmJRp1PsF512', '天津天海', 1, 1, 1, 1, 1, 1, 1);
 INSERT INTO `ry`.`team`(`id`, `logo`, `name`, `win`, `lose`, `flat`, `score`, `session`, `goal`, `conceded`) VALUES (7990775794644878314, 'Fs0VE3zzoh316SLPKaQ3jXDSa-Jo', '深圳佳兆业', 1, 1, 1, 1, 1, 1, 1);
 INSERT INTO `ry`.`team`(`id`, `logo`, `name`, `win`, `lose`, `flat`, `score`, `session`, `goal`, `conceded`) VALUES (7990775794644878315, 'FijuS5LjoA_WjcdWtv3qodW2I3aX', '北京人和', 1, 1, 1, 1, 1, 1, 1);
+

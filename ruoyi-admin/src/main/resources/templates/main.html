@@ -126,15 +126,7 @@
 
                     </div>
                     <div class="ibox-content">
-						<ol>
-							<li>dfdfdf</li>
-							<li>gfgf</li>
-							<li>fr</li>
-							<li>tghtht</li>
-							<li>ff</li>
-
-							<li>更多……</li>
-						</ol>
+                        <table id="bootstrap-table1"></table>
                     </div>
                 </div>
             </div>
@@ -184,6 +176,7 @@
     <script th:inline="javascript">
         $(function() {
             var options = {
+                id: "bootstrap-table",
                 url: "team/list",
                 modalName: "球队管理",
                 pagination: false,
@@ -243,6 +236,54 @@
                     }*/]
             };
             $.table.init(options);
+
+
+            var options1 = {
+                id: "bootstrap-table1",
+                url: "player/list",
+                modalName: "球员",
+                pagination: false,
+                showSearch: false,
+                showRefresh: false,
+                showToggle: false,
+                showColumns: false,
+                striped: true,
+                classes: "table table-no-bordered table-striped table-hover",
+                columns: [
+                    /*{
+                        field: 'teamId',
+                        title: '球队id'
+                    },
+                    {
+                        field: 'headPortrait',
+                        title: '头像'
+                    },*/
+                    {
+                        field: 'name',
+                        title: '姓名'
+                    }/*,
+                    {
+                        field: 'birthdate',
+                        title: '出生年月'
+                    }*/,
+                    {
+                        field: 'location',
+                        title: '位置'
+                    },
+                    {
+                        field: 'nationality',
+                        title: '国籍/籍贯'
+                    },
+                    {
+                        field: 'appearance',
+                        title: '出场'
+                    },
+                    {
+                        field: 'goals',
+                        title: '进球'
+                    }]
+            };
+            $.table.init(options1);
 
         });
 
