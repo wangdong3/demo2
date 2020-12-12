@@ -11,22 +11,26 @@
                     <div class="select-list">
                         <ul>
                             <li>
-                                <label>球队id：</label>
-                                <input type="text" name="teamId"/>
+                                球队：
+                                <select name="teamId" th:with="type=${@dict.getType('team_select')}">
+                                    <option value="">所有</option>
+                                    <option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}"></option>
+                                </select>
+                                <!--<input type="text" name="teamId"/>-->
                             </li>
-                            <li>
+                           <!-- <li>
                                 <label>头像：</label>
                                 <input type="text" name="headPortrait"/>
-                            </li>
-                            <li>
+                            </li>-->
+                            <!--<li>
                                 <label>出生年月：</label>
                                 <input type="text" name="birthdate"/>
-                            </li>
+                            </li>-->
                             <li>
                                 <label>位置：</label>
                                 <input type="text" name="location"/>
                             </li>
-                            <li>
+                            <!--<li>
                                 <label>国籍/籍贯：</label>
                                 <input type="text" name="nationality"/>
                             </li>
@@ -37,7 +41,7 @@
                             <li>
                                 <label>进球：</label>
                                 <input type="text" name="goals"/>
-                            </li>
+                            </li>-->
                             <li>
                                 <a class="btn btn-primary btn-rounded btn-sm" onclick="$.table.search()"><i class="fa fa-search"></i>&nbsp;搜索</a>
                                 <a class="btn btn-warning btn-rounded btn-sm" onclick="$.form.reset()"><i class="fa fa-refresh"></i>&nbsp;重置</a>
@@ -89,8 +93,8 @@
                     visible: false
                 },
                 {
-                    field: 'teamId',
-                    title: '球队id'
+                    field: 'teamName',
+                    title: '球队'
                 },
                 {
                     field: 'headPortrait',

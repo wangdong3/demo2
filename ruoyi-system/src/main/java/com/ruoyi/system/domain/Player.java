@@ -22,6 +22,10 @@ public class Player extends BaseEntity
     @Excel(name = "球队id")
     private Long teamId;
 
+    /** 球队名称 */
+    @Excel(name = "球队名称")
+    private String teamName;
+
     /** 头像 */
     @Excel(name = "头像")
     private String headPortrait;
@@ -132,11 +136,20 @@ public class Player extends BaseEntity
         return goals;
     }
 
+    public String getTeamName()
+    {
+        return teamName;
+    }
+    public void setTeamName(String teamName)
+    {
+        this.teamName = teamName;
+    }
     @Override
     public String toString() {
         return new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)
             .append("id", getId())
             .append("teamId", getTeamId())
+            .append("teamName", getTeamName())
             .append("headPortrait", getHeadPortrait())
             .append("name", getName())
             .append("birthdate", getBirthdate())

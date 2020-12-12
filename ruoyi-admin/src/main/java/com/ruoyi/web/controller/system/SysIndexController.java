@@ -42,6 +42,12 @@ public class SysIndexController extends BaseController
     @Autowired
     private ISysNewsService sysNewsService;
 
+
+    @GetMapping("")
+    public String home()
+    {
+        return "home";
+    }
     // 系统首页
     @GetMapping("/index")
     public String index(ModelMap mmap)

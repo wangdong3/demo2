@@ -18,7 +18,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </resultMap>
 
     <sql id="selectTeamVo">
-        select id, logo, name, win, lose, flat, score, session, goal, conceded from team
+        select CAST( id AS CHAR ) id, logo, name, win, lose, flat, score, session, goal, conceded from team
     </sql>
 
     <select id="selectTeamList" parameterType="Team" resultMap="TeamResult">

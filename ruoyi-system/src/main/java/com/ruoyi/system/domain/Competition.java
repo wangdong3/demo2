@@ -23,9 +23,17 @@ public class Competition extends BaseEntity
     @Excel(name = "参赛球队甲方id")
     private Long teamAId;
 
+    /** 参赛球队甲方名称 */
+    @Excel(name = "参赛球队甲方名称")
+    private String teamAName;
+
     /** 参赛球队乙方id */
     @Excel(name = "参赛球队乙方id")
     private Long teamBId;
+
+    /** 参赛球队乙方名称 */
+    @Excel(name = "参赛球队乙方名称")
+    private String teamBName;
 
     /** 时间 */
     @Excel(name = "时间", width = 30, dateFormat = "yyyy-MM-dd")
@@ -120,12 +128,30 @@ public class Competition extends BaseEntity
         return partBGoals;
     }
 
+    public String getTeamAName()
+    {
+        return teamAName;
+    }
+    public void setTeamAName(String teamAName)
+    {
+        this.teamAName = teamAName;
+    }
+    public String getTeamBName()
+    {
+        return teamBName;
+    }
+    public void setTeamBName(String teamBName)
+    {
+        this.teamBName = teamBName;
+    }
     @Override
     public String toString() {
         return new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)
             .append("id", getId())
             .append("teamAId", getTeamAId())
+            .append("teamAName", getTeamAName())
             .append("teamBId", getTeamBId())
+            .append("teamBName", getTeamBName())
             .append("gameTime", getGameTime())
             .append("site", getSite())
             .append("session", getSession())

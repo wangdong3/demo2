@@ -7,7 +7,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     <resultMap type="Competition" id="CompetitionResult">
         <result property="id"    column="id"    />
         <result property="teamAId"    column="team_a_id"    />
+        <result property="teamAName"    column="team_a_name"    />
         <result property="teamBId"    column="team_b_id"    />
+        <result property="teamBName"    column="team_b_name"    />
         <result property="gameTime"    column="game_time"    />
         <result property="site"    column="site"    />
         <result property="session"    column="session"    />
@@ -20,7 +22,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </resultMap>
 
     <sql id="selectCompetitionVo">
-        select id, team_a_id, team_b_id, game_time, site, session, part_a_goals, part_b_goals, create_by, create_time, update_by, update_time from competition
+        select competition.id, team_a_id, team1.name team_a_name, team_b_id,team2.name team_b_name, game_time, site, competition.session,
+        part_a_goals, part_b_goals, create_by, create_time, update_by, update_time from competition
+        left join team team1 on competition.team_a_id = team1.id
+        left join team team2 on competition.team_b_id = team2.id
     </sql>
 
     <select id="selectCompetitionList" parameterType="Competition" resultMap="CompetitionResult">
@@ -30,7 +35,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="teamBId != null "> and team_b_id = #{teamBId}</if>
             <if test="gameTime != null "> and game_time = #{gameTime}</if>
             <if test="site != null  and site != ''"> and site = #{site}</if>
-            <if test="session != null  and session != ''"> and session = #{session}</if>
+            <if test="session != null  and session != ''"> and competition.session = #{session}</if>
             <if test="partAGoals != null "> and part_a_goals = #{partAGoals}</if>
             <if test="partBGoals != null "> and part_b_goals = #{partBGoals}</if>
         </where>
@@ -38,7 +43,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     
     <select id="selectCompetitionById" parameterType="Long" resultMap="CompetitionResult">
         <include refid="selectCompetitionVo"/>
-        where id = #{id}
+        where competition.id = #{id}
     </select>
         
     <insert id="insertCompetition" parameterType="Competition" useGeneratedKeys="true" keyProperty="id">

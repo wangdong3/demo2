@@ -7,6 +7,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     <resultMap type="Player" id="PlayerResult">
         <result property="id"    column="id"    />
         <result property="teamId"    column="team_id"    />
+        <result property="teamName"    column="team_name"    />
         <result property="headPortrait"    column="head_portrait"    />
         <result property="name"    column="name"    />
         <result property="birthdate"    column="birthdate"    />
@@ -21,7 +22,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </resultMap>
 
     <sql id="selectPlayerVo">
-        select id, team_id, head_portrait, name, birthdate, location, nationality, appearance, goals, create_by, create_time, update_by, update_time from player
+        select player.id, team_id, team.name team_name,head_portrait, player.name, birthdate, location, nationality, appearance, goals,
+        create_by, create_time, update_by, update_time from player
+        left join team on player.team_id = team.id
     </sql>
 
     <select id="selectPlayerList" parameterType="Player" resultMap="PlayerResult">
@@ -29,7 +32,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <where>  
             <if test="teamId != null "> and team_id = #{teamId}</if>
             <if test="headPortrait != null  and headPortrait != ''"> and head_portrait = #{headPortrait}</if>
-            <if test="name != null  and name != ''"> and name like concat('%', #{name}, '%')</if>
+            <if test="name != null  and name != ''"> and player.name like concat('%', #{name}, '%')</if>
             <if test="birthdate != null  and birthdate != ''"> and birthdate = #{birthdate}</if>
             <if test="location != null  and location != ''"> and location = #{location}</if>
             <if test="nationality != null  and nationality != ''"> and nationality = #{nationality}</if>
@@ -40,7 +43,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     
     <select id="selectPlayerById" parameterType="Long" resultMap="PlayerResult">
         <include refid="selectPlayerVo"/>
-        where id = #{id}
+        where player.id = #{id}
     </select>
         
     <insert id="insertPlayer" parameterType="Player" useGeneratedKeys="true" keyProperty="id">

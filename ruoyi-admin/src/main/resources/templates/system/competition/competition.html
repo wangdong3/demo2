@@ -10,14 +10,14 @@
                 <form id="formId">
                     <div class="select-list">
                         <ul>
-                            <li>
+                            <!--<li>
                                 <label>参赛球队甲方id：</label>
                                 <input type="text" name="teamAId"/>
                             </li>
                             <li>
                                 <label>参赛球队乙方id：</label>
                                 <input type="text" name="teamBId"/>
-                            </li>
+                            </li>-->
                             <li class="select-time">
                                 <label>时间：</label>
                                 <input type="text" class="time-input" id="startTime" placeholder="开始时间" name="params[beginGameTime]"/>
@@ -32,14 +32,14 @@
                                 <label>场次：</label>
                                 <input type="text" name="session"/>
                             </li>
-                            <li>
+                            <!--<li>
                                 <label>甲方球队分数：</label>
                                 <input type="text" name="partAGoals"/>
                             </li>
                             <li>
                                 <label>乙方球队分数：</label>
                                 <input type="text" name="partBGoals"/>
-                            </li>
+                            </li>-->
                             <li>
                                 <a class="btn btn-primary btn-rounded btn-sm" onclick="$.table.search()"><i class="fa fa-search"></i>&nbsp;搜索</a>
                                 <a class="btn btn-warning btn-rounded btn-sm" onclick="$.form.reset()"><i class="fa fa-refresh"></i>&nbsp;重置</a>
@@ -91,12 +91,12 @@
                     visible: false
                 },
                 {
-                    field: 'teamAId',
-                    title: '参赛球队甲方id'
+                    field: 'teamAName',
+                    title: '参赛球队甲方'
                 },
                 {
-                    field: 'teamBId',
-                    title: '参赛球队乙方id'
+                    field: 'teamBName',
+                    title: '参赛球队乙方'
                 },
                 {
                     field: 'gameTime',

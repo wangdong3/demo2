@@ -1,6 +1,8 @@
 package com.ruoyi.system.service.impl;
 
 import java.util.List;
+
+import com.ruoyi.common.utils.uuid.IdUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.ruoyi.system.mapper.TeamMapper;
@@ -53,6 +55,8 @@ public class TeamServiceImpl implements ITeamService
     @Override
     public int insertTeam(Team team)
     {
+        String id = String.valueOf(java.util.UUID.randomUUID().getLeastSignificantBits() * -1);
+        team.setId(id);
         return teamMapper.insertTeam(team);
     }
 
