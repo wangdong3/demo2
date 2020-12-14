@@ -10,9 +10,6 @@
     <link href="../static/css/main/style.min862f.css" th:href="@{/css/main/style.min862f.css}" rel="stylesheet"/>
     <link href="../static/css/main/layui.css"  th:href="@{/css/main/layui.css}" media="all" rel="stylesheet">
     <style>
-        .logoWidth{
-            width: 30%;
-        }
         .logoWidth15{
             width: 15%;
         }
@@ -27,11 +24,11 @@
 <body>
 <div class="header">
     <ul class="layui-nav">
-        <li class="layui-nav-item"><a href="">赛事新闻</a></li>
-        <li class="layui-nav-item layui-this">
+        <li class="layui-nav-item layui-this"><a href="">主页</a></li>
+        <!--<li class="layui-nav-item">
             <a href="javascript:;">官方公告</a>
         </li>
-        <li class="layui-nav-item"><a href="">球队信息</a></li>
+        <li class="layui-nav-item"><a href="">赛事新闻</a></li>-->
         <li class="layui-nav-item" style="float: right"><a href="login.html">登录</a></li>
     </ul>
 </div>
@@ -70,9 +67,9 @@
             <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
                 <legend>赛事新闻</legend>
             </fieldset>
-            <div style="padding: 20px; background-color: #F2F2F2;">
-                <div class="layui-row layui-col-space15">
-                    <div class="layui-col-md12">
+            <div id="news" style="padding: 20px; background-color: #F2F2F2;">
+                <div class="layui-row layui-col-space15" >
+                    <!--<div class="layui-col-md12">
                         <div class="layui-card">
                             <div class="layui-card-header">
                                 <a>用足球与媒体的力量唤燃亿心 2020中国平安中超联赛媒体传播大盘点</a>
@@ -81,7 +78,7 @@
                                 内容...
                             </div>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
             </div>
         </div>
@@ -94,7 +91,7 @@
             </div>
         </div>
     </div>
-<!--
+
     <div class="wrapper wrapper-content">
         <div class="row">
             <div class="col-sm-4">
@@ -131,7 +128,7 @@
             </div>
         </div>
     </div>
--->
+
 </div>
 <script th:src="@{/js/jquery.min.js}"></script>
 <script th:src="@{/js/bootstrap.min.js}"></script>
@@ -142,7 +139,7 @@
     $(function() {
         var options = {
             id: "bootstrap-table",
-            url: "team/list",
+            url: "visitor/team/list",
             modalName: "球队管理",
             pagination: false,
             showSearch: false,
@@ -166,7 +163,7 @@
                     title: '球队',
                     formatter: function(value, row, index) {
                         var actions = [];
-                        var imgPath = "../img/team/" + row.logo;
+                        var imgPath = "../ry/img/team/" + row.logo;
                         actions.push('<img class="logoWidth15" src=' + imgPath + '>');
                         actions.push(value);
                         return actions.join(' ');
@@ -202,10 +199,9 @@
         };
         $.table.init(options);
 
-
         var options1 = {
             id: "bootstrap-table1",
-            url: "player/list",
+            url: "visitor/player/list",
             modalName: "球员",
             pagination: false,
             showSearch: false,
@@ -252,7 +248,7 @@
 
         var options2 = {
             id: "bootstrap-table2",
-            url: "competition/list",
+            url: "visitor/competition/list",
             modalName: "赛程",
             pagination: false,
             showSearch: false,
@@ -292,6 +288,28 @@
         };
         $.table.init(options2);
 
+        var newsList = [];
+        var newsUrl = "/ry/visitor/news/list";
+        $.ajax({
+           type: "post",
+           url: newsUrl,
+           dataType: "json",
+           contentType: "application/json",
+           success: function (data) {
+               newsList = data.rows;
+               var newsHtm = '<div class="layui-row layui-col-space15" >';
+               for (var i = 0; i < newsList.length; i++) {
+                   var item = newsList[i];
+                   newsHtm = newsHtm + '<div class="layui-col-md12"><div class="layui-card"><div class="layui-card-header">';
+                   newsHtm = newsHtm + '<a>' + item.newsTitle + '</a>';
+                   newsHtm = newsHtm + '<span class="fr">' + item.createTime + '</span></div>';
+                   newsHtm = newsHtm + '<div class="layui-card-body">' + item.newsContent;
+                   newsHtm = newsHtm + '</div></div></div>';
+               }
+               newsHtm = newsHtm + '</div>';
+               $("#news").html(newsHtm);
+           }
+        });
     });
 
     $('#pay-qrcode').click(function(){
@@ -305,6 +323,8 @@
             content: html
         });
     });
+
+
 
 </script>
 </body>
