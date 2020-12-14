@@ -15,12 +15,8 @@
             <div class="form-group">    
                 <label class="col-sm-3 control-label">logo：</label>
                 <div class="col-sm-8 layui-upload">
-                    <!--<input name="logo" class="form-control" type="text">-->
-                    <button type="button" class="layui-btn" id="test1">上传图片</button>
-                    <div class="layui-upload-list">
-                        <img class="layui-upload-img" id="demo1">
-                        <p id="demoText"></p>
-                    </div>
+                    <input name="logo" class="hidden" type="text">
+                    <input id="filePath" name="filePath" class="form-control" type="file">
                 </div>
             </div>
             <div class="form-group">    
@@ -82,9 +78,39 @@
 
         function submitHandler() {
             if ($.validate.form()) {
+                var logoPath = uploadFile();
+                $("input[name='logo']").val(logoPath);
                 $.operate.save(prefix + "/add", $('#form-team-add').serialize());
             }
         }
+
+        function uploadFile() {
+            var path = '';
+            var formData = new FormData();
+            var $filePath = $('#filePath');
+            if ($filePath[0].files[0] == null) {
+                $.modal.alertWarning("请先选择文件路径");
+                return false;
+            }
+            formData.append('file', $filePath[0].files[0]);
+            $.ajax({
+                url: "/ry/common/upload",
+                type: 'post',
+                cache: false,
+                data: formData,
+                processData: false,
+                contentType: false,
+                dataType: "json",
+                async : false,
+                success: function(result) {
+                    path = result.url;
+                    $.operate.successCallback(result);
+                }
+            });
+            return path;
+        }
+
+
     </script>
 </body>
 </html>

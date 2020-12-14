@@ -13,6 +13,9 @@
         .logoWidth15{
             width: 15%;
         }
+        .logoHeight15{
+            height: 15%;
+        }
         .logoHeight{
             height: 70%;
         }
@@ -30,6 +33,7 @@
         </li>
         <li class="layui-nav-item"><a href="">赛事新闻</a></li>-->
         <li class="layui-nav-item" style="float: right"><a href="login.html">登录</a></li>
+        <li class="layui-nav-item" style="float: right"><a th:href="@{/register}">注册</a></li>
     </ul>
 </div>
 <div>
@@ -221,7 +225,10 @@
                 },*/
                 {
                     field: 'name',
-                    title: '姓名'
+                    title: '球员',
+                    formatter: function (value, row, index) {
+                        return '<img class="img-circle" style="width: 10%;" src=' + row.headPortrait + '> ' + value;
+                    }
                 }/*,
                     {
                         field: 'birthdate',

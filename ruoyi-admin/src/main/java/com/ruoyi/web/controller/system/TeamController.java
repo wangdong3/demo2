@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -85,7 +86,7 @@ public class TeamController extends BaseController
     @Log(title = "球队", businessType = BusinessType.INSERT)
     @PostMapping("/add")
     @ResponseBody
-    public AjaxResult addSave(Team team)
+    public AjaxResult addSave(Team team) throws IOException
     {
         return toAjax(teamService.insertTeam(team));
     }

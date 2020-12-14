@@ -98,7 +98,10 @@
                 },
                 {
                     field: 'headPortrait',
-                    title: '头像'
+                    title: '头像',
+                    formatter: function (value, row, index) {
+                        return '<img class="img-circle" style="width: 10%;" src=' + value + '>';
+                    }
                 },
                 {
                     field: 'name',
