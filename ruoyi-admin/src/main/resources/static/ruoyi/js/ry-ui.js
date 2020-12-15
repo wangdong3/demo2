@@ -962,7 +962,7 @@ var table = {
             	    _height = 'auto';
             	}
             	var options = {
-                    title: table.options.modalName + "详细",
+                    title: table.options.modalName + "详情",
                     width: _width,
                     height: _height,
                     url: _url,

@@ -179,7 +179,8 @@
             var options = {
                 id: "bootstrap-table",
                 url: "/ry/visitor/team/list",
-                modalName: "球队管理",
+                detailUrl: "/ry/visitor/team/detail/{id}",
+                modalName: "球队",
                 pagination: false,
                 showSearch: false,
                 showRefresh: false,
@@ -203,7 +204,8 @@
                         formatter: function(value, row, index) {
                             var actions = [];
                             var imgPath = row.logo.indexOf('http://')>=0 ? row.logo : "../img/team/" + row.logo;
-                            actions.push('<img class="logoWidth15" src=' + imgPath + '>');
+                            actions.push('<a href="javascript:void(0)" onclick="$.operate.detail(\'' + row.id + '\')">');
+                            actions.push('<img class="logoWidth15" src=' + imgPath + '></a> ');
                             actions.push(value);
                             return actions.join(' ');
                         }
