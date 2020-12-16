@@ -61,11 +61,19 @@ public class VisitController
     }
 
     @GetMapping("/team/detail/{id}")
-    public String detail(@PathVariable("id") Long id, ModelMap mmap)
+    public String teamDetail(@PathVariable("id") Long id, ModelMap mmap)
     {
         Team team = teamService.selectTeamById(id);
         mmap.put("team", team);
         return "system/team/detail";
+    }
+
+    @GetMapping("/player/detail/{id}")
+    public String playerDetail(@PathVariable("id") Long id, ModelMap mmap)
+    {
+        Player player = playerService.selectPlayerById(id);
+        mmap.put("player", player);
+        return "system/player/detail";
     }
 
     /**
