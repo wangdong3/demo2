@@ -2,6 +2,11 @@
 <html lang="zh" xmlns:th="http://www.thymeleaf.org" >
 <head>
     <th:block th:include="include :: header('球队信息')" />
+    <style>
+        .margin6 {
+            margin-top: 6px;
+        }
+    </style>
 </head>
 <body class="white-bg">
 <div class="wrapper wrapper-content animated fadeInRight ibox-content">
@@ -15,50 +20,56 @@
         </div>-->
         <div class="form-group">
             <label class="col-sm-3 control-label">名称：</label>
-            <div class="col-sm-8">
-                <input name="name" th:field="*{name}" class="form-control" type="text">
+            <div class="col-sm-8 margin6" th:text="*{name}">
+                <!--<input name="name" th:field="*{name}" class="form-control" type="text">-->
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">简介：</label>
+            <div class="col-sm-8 margin6">
+                球队介绍......
             </div>
         </div>
         <div class="form-group">
             <label class="col-sm-3 control-label">赢：</label>
-            <div class="col-sm-8">
-                <input name="win" th:field="*{win}" class="form-control" type="text">
+            <div class="col-sm-8 margin6" th:text="*{win}">
+                <!--<input name="win" th:field="*{win}" class="form-control" type="text">-->
             </div>
         </div>
         <div class="form-group">
             <label class="col-sm-3 control-label">输：</label>
-            <div class="col-sm-8">
-                <input name="lose" th:field="*{lose}" class="form-control" type="text">
+            <div class="col-sm-8 margin6" th:text="*{lose}">
+                <!--<input name="lose" th:field="*{lose}" class="form-control" type="text">-->
             </div>
         </div>
         <div class="form-group">
             <label class="col-sm-3 control-label">平：</label>
-            <div class="col-sm-8">
-                <input name="flat" th:field="*{flat}" class="form-control" type="text">
+            <div class="col-sm-8 margin6" th:text="*{flat}">
+                <!--<input name="flat" th:field="*{flat}" class="form-control" type="text">-->
             </div>
         </div>
         <div class="form-group">
             <label class="col-sm-3 control-label">积分：</label>
-            <div class="col-sm-8">
-                <input name="score" th:field="*{score}" class="form-control" type="text">
+            <div class="col-sm-8 margin6" th:text="*{score}">
+                <!--<input name="score" th:field="*{score}" class="form-control" type="text">-->
             </div>
         </div>
         <div class="form-group">
             <label class="col-sm-3 control-label">场次：</label>
-            <div class="col-sm-8">
-                <input name="session" th:field="*{session}" class="form-control" type="text">
+            <div class="col-sm-8 margin6" th:text="*{session}">
+                <!--<input name="session" th:field="*{session}" class="form-control" type="text">-->
             </div>
         </div>
         <div class="form-group">
             <label class="col-sm-3 control-label">进球：</label>
-            <div class="col-sm-8">
-                <input name="goal" th:field="*{goal}" class="form-control" type="text">
+            <div class="col-sm-8 margin6" th:text="*{goal}">
+                <!--<input name="goal" th:field="*{goal}" class="form-control" type="text">-->
             </div>
         </div>
         <div class="form-group">
             <label class="col-sm-3 control-label">丢球：</label>
-            <div class="col-sm-8">
-                <input name="conceded" th:field="*{conceded}" class="form-control" type="text">
+            <div class="col-sm-8 margin6" th:text="*{conceded}">
+                <!--<input name="conceded" th:field="*{conceded}" class="form-control" type="text">-->
             </div>
         </div>
     </form>

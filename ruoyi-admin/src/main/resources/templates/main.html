@@ -243,6 +243,7 @@
             var options1 = {
                 id: "bootstrap-table1",
                 url: "/ry/visitor/player/list",
+                detailUrl: "/ry/visitor/player/detail/{id}",
                 modalName: "球员",
                 pagination: false,
                 showSearch: false,
@@ -263,8 +264,15 @@
                     {
                         field: 'name',
                         title: '球员',
-                        formatter: function (value, row, index) {
+                        /*formatter: function (value, row, index) {
                             return '<img class="img-circle" style="width: 10%;" src=' + row.headPortrait + '> ' + value;
+                        }*/
+                        formatter: function (value, row, index) {
+                            var actions = [];
+                            actions.push('<a href="javascript:void(0)" onclick="$.operate.detail(\'' + row.id + '\')">');
+                            actions.push('<img class="img-circle" style="width: 10%;" src=' + row.headPortrait + '></a> ');
+                            actions.push(value);
+                            return actions.join(' ');
                         }
                     }/*,
                     {

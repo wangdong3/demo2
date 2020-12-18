@@ -126,7 +126,7 @@
                         <h5>通知公告</h5>
                     </div>
                     <div class="ibox-content">
-
+                        暂无......
                     </div>
                 </div>
             </div>
@@ -168,7 +168,8 @@
                     title: '球队',
                     formatter: function(value, row, index) {
                         var actions = [];
-                        var imgPath = "../ry/img/team/" + row.logo;
+                        // var imgPath = "../ry/img/team/" + row.logo;
+                        var imgPath = row.logo.indexOf('http://')>=0 ? row.logo : "../ry/img/team/" + row.logo;
                         actions.push('<a href="javascript:void(0)" onclick="$.operate.detail(\'' + row.id + '\')">');
                         actions.push('<img class="logoWidth15" src=' + imgPath + '></a> ');
                         actions.push(value);
