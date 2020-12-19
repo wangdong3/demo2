@@ -15,6 +15,7 @@ public class SuperApplication
     public static void main(String[] args)
     {
         SpringApplication.run(SuperApplication.class, args);
+
         System.out.println("(♥◠‿◠)ﾉﾞ  系统启动成功   ლ(´ڡ`ლ)ﾞ ");
     }
 }
