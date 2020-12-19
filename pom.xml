@@ -179,53 +179,53 @@
                 <artifactId>fastjson</artifactId>
                 <version>${fastjson.version}</version>
             </dependency>
-            
-            <!-- 定时任务-->
+        <!--
+            &lt;!&ndash; 定时任务&ndash;&gt;
             <dependency>
                 <groupId>com.ruoyi</groupId>
                 <artifactId>ruoyi-quartz</artifactId>
                 <version>${ruoyi.version}</version>
             </dependency>
 
-            <!-- 代码生成-->
+            &lt;!&ndash; 代码生成&ndash;&gt;
             <dependency>
                 <groupId>com.ruoyi</groupId>
                 <artifactId>ruoyi-generator</artifactId>
                 <version>${ruoyi.version}</version>
             </dependency>
 
-            <!-- 核心模块-->
+            &lt;!&ndash; 核心模块&ndash;&gt;
             <dependency>
                 <groupId>com.ruoyi</groupId>
                 <artifactId>ruoyi-framework</artifactId>
                 <version>${ruoyi.version}</version>
             </dependency>
 
-            <!-- 系统模块-->
+            &lt;!&ndash; 系统模块&ndash;&gt;
             <dependency>
                 <groupId>com.ruoyi</groupId>
                 <artifactId>ruoyi-system</artifactId>
                 <version>${ruoyi.version}</version>
             </dependency>
 
-            <!-- 通用工具-->
+            &lt;!&ndash; 通用工具&ndash;&gt;
             <dependency>
                 <groupId>com.ruoyi</groupId>
                 <artifactId>ruoyi-common</artifactId>
                 <version>${ruoyi.version}</version>
-            </dependency>
+            </dependency>-->
 
         </dependencies>
     </dependencyManagement>
 
-    <modules>
+    <!--<modules>
         <module>ruoyi-admin</module>
         <module>ruoyi-framework</module>
         <module>ruoyi-system</module>
         <module>ruoyi-quartz</module>
         <module>ruoyi-generator</module>
         <module>ruoyi-common</module>
-    </modules>
+    </modules>-->
     <packaging>pom</packaging>
 
 
